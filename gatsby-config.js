@@ -18,10 +18,15 @@ module.exports = {
         path: "./src/images/"
         }
     },
-    "gatsby-plugin-sitemap",
+    "gatsby-plugin-offline",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
+        name: 'Veterianria-Gatsby',
+        short_name: 'Veterinaria',
+        start_url: '/',
+        background_color: '#FFFFFF',
+        display: 'minimal-ui',
         icon: "src/images/icon.png",
       },
     },
@@ -35,5 +40,6 @@ module.exports = {
       },
       __key: "images",
     },
+    
   ],
 };

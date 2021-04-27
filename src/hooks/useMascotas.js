@@ -8,6 +8,7 @@ const useMascotas = () => {
     titulo
     info
     id
+    slug
     contenido
     imagen{
     fluid(maxWidth:1200){
