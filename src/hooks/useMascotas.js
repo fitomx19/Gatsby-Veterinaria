@@ -1,0 +1,31 @@
+import {graphql, useStaticQuery} from 'gatsby';
+
+const useMascotas = () => {
+    const data = useStaticQuery(
+        graphql `query{
+               allDatoCmsPet{
+    nodes{	
+    titulo
+    info
+    id
+    contenido
+    imagen{
+    fluid(maxWidth:1200){
+        ...GatsbyDatoCmsFluid
+                     }
+                }
+            }
+	    }
+            }`
+    )
+    return data.allDatoCmsPet.nodes.map(e =>({
+        titulo: e.titulo,
+        id: e.titulo,
+        contenido: e.contenido,
+        imagen: e.imagen,
+        slug: e.slug
+
+    }))
+}
+
+export default useMascotas;
